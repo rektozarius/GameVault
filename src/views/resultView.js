@@ -13,14 +13,20 @@ export const createResultView = (results) => {
     resultCard.setAttribute(GAME_ID_ATTR, result.id);
     resultCard.classList.add(RESULT_CARD_CLASS);
 
-    const resultTitle = document.createElement('p');
-    resultTitle.innerText = result.name;
+    const resultTitle = document.createElement('div');
+    const resultTitleElement = document.createElement('p');
+    resultTitleElement.innerText = result.name;
+    resultTitle.appendChild(resultTitleElement);
 
-    const resultImg = document.createElement('img');
-    resultImg.src = result.background_image;
+    const resultImg = document.createElement('div');
+    const resultImgElement = document.createElement('img');
+    resultImgElement.src = result.background_image;
+    resultImg.appendChild(resultImgElement);
 
-    const resultRating = document.createElement('p');
-    resultRating.innerText = `User Rating: ⭐${result.rating}`
+    const resultRating = document.createElement('div');
+    const resultRatingElement = document.createElement('p');
+    resultRatingElement.innerText = `User Rating: ⭐${result.rating}`;
+    resultRating.appendChild(resultRatingElement);
     
     resultCard.append(resultTitle, resultImg, resultRating);
     resultContainer.appendChild(resultCard);

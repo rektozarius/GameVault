@@ -23,7 +23,6 @@ To run this project locally you will need to open `index.html` in your browser u
 
 - [ ] The user can view a list of the current most popular games for all genres
 - [ ] The user can search games by genre
-- [ ] The user can search games by tags
 
 ### Low Priority
 
