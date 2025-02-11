@@ -1,5 +1,9 @@
 import { USER_INTERFACE_ID } from "../constants.js";
 
+/**
+ * Displays error message
+ * @param {Error} error
+ */
 export const errorView = (error) => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';

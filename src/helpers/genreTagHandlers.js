@@ -4,6 +4,13 @@ import { initResultPage } from "../pages/resultPage.js";
 import { errorView } from './errorView.js';
 import { loadingView } from './loadingView.js';
 
+/**
+ * Listens to click events from genres or tags
+ * Fetches search results by genre or tag name and loads the result page
+ * Handles loading and errors
+ * @param {String} containerId
+ * @param {String} filter
+ */
 export const genreTagListener = (containerId, filter) => {
   const container = document.getElementById(containerId);
   container.addEventListener('click', async (event) => {
@@ -19,6 +26,11 @@ export const genreTagListener = (containerId, filter) => {
   });
 };
 
+/**
+ * Populates container with genres or tags
+ * @param {String} list
+ * @param {String} containerId
+ */
 export const populateView = (list, containerId) => {
   const container = document.getElementById(containerId);
   list.forEach((item) => {

@@ -1,10 +1,3 @@
-/*
- The constants file is used to store anything 
- that multiple files use, that should ALWAYS be the same
- 
- It is an industry standard to make these variables fully capitalised
-*/
-
 export const USER_INTERFACE_ID = 'user-interface';
 export const API_KEY = 'key=a40444e026a540ecbb4dedb9673f204a';
 export const API_BASE_URL = 'https://api.rawg.io/api';

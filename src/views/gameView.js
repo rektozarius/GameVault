@@ -14,13 +14,13 @@ import {
 import { populateView } from "../helpers/genreTagHandlers.js";
 
 /**
- * Create the game page
+ * Creates the game page container
+ * @param {Object} game
  * @returns {Element}
  */
 export const createGameView = (game) => {
   const gameContainer = document.createElement('div');
   gameContainer.id = GAME_CONTAINER_ID;
-  gameContainer.style.backgroundImage = game.background_image;
 
   gameContainer.innerHTML = String.raw`
     <div id="${GAME_CANVAS_ID}">
@@ -66,46 +66,50 @@ export const createGameView = (game) => {
   return gameContainer;
   };
 
-  export const updateGameView = (game) => {
-    const gamePlatforms = document.getElementById(GAME_PLATFORMS_ID);
-    game.platforms.forEach((platform) => {
-      const element = document.createElement('span');
-      element.innerText = platform.platform.name;
-      gamePlatforms.appendChild(element);
-    });
+/**
+ * Updates the game page container with game data
+ * Assigns a random screenshot from the game object every time the game page is updated
+ * Populates genre and tag containers with game genres and game tags
+ * @param {Object} game
+ */  
+export const updateGameView = (game) => {
+  const gamePlatforms = document.getElementById(GAME_PLATFORMS_ID);
+  game.platforms.forEach((platform) => {
+    const element = document.createElement('span');
+    element.innerText = platform.platform.name;
+    gamePlatforms.appendChild(element);
+  });
 
-    const gameStores = document.getElementById(GAME_STORES_ID);
-    game.stores.forEach((store) => {
-      const element = document.createElement('span');
-      element.innerText = store.store.name;
-      gameStores.appendChild(element);
-    });
+  const gameStores = document.getElementById(GAME_STORES_ID);
+  game.stores.forEach((store) => {
+    const element = document.createElement('span');
+    element.innerText = store.store.name;
+    gameStores.appendChild(element);
+  });
 
-    const gameDevelopers = document.getElementById(GAME_DEVELOPERS_ID);
-    game.developers.forEach((developer) => {
-      const element = document.createElement('span');
-      element.innerText = developer.name;
-      gameDevelopers.appendChild(element);
-    });
+  const gameDevelopers = document.getElementById(GAME_DEVELOPERS_ID);
+  game.developers.forEach((developer) => {
+    const element = document.createElement('span');
+    element.innerText = developer.name;
+    gameDevelopers.appendChild(element);
+  });
 
+  const gamePublishers = document.getElementById(GAME_PUBLISHERS_ID);
+  game.publishers.forEach((publisher) => {
+    const element = document.createElement('span');
+    element.innerText = publisher.name;
+    gamePublishers.appendChild(element);
+  });
 
-    const gamePublishers = document.getElementById(GAME_PUBLISHERS_ID);
-    game.publishers.forEach((publisher) => {
-      const element = document.createElement('span');
-      element.innerText = publisher.name;
-      gamePublishers.appendChild(element);
-    });
+  const gameDescription = document.getElementById(GAME_DESCRIPTION_ID);
+  gameDescription.innerHTML = game.description;
+  const gameCanvas = document.getElementById(GAME_CANVAS_ID);
+  const imageElement = document.createElement('img');
+  const imageIndex = Math.floor(Math.random() * game.short_screenshots.length);
+  imageElement.src = game.short_screenshots[imageIndex].image;
+  gameCanvas.appendChild(imageElement);
 
-    const gameDescription = document.getElementById(GAME_DESCRIPTION_ID);
-    gameDescription.innerHTML = game.description;
-
-    const gameCanvas = document.getElementById(GAME_CANVAS_ID);
-    const imageElement = document.createElement('img');
-    const imageIndex = Math.floor(Math.random() * game.short_screenshots.length);
-    imageElement.src = game.short_screenshots[imageIndex].image;
-    gameCanvas.appendChild(imageElement);
-
-    populateView(game.genres, GAME_GENRES_CONTAINER_ID);
-    populateView(game.tags, GAME_TAGS_CONTAINER_ID);
-  };
+  populateView(game.genres, GAME_GENRES_CONTAINER_ID);
+  populateView(game.tags, GAME_TAGS_CONTAINER_ID);
+};
 

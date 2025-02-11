@@ -1,3 +1,11 @@
+/**
+ * Destructures relevant properties from game search object and game details object
+ * Filters the tags by language
+ * Saves game object to sessionStorage
+ * @param {Object} gameData
+ * @param {Object} gameDetails
+ * @returns {Object}
+ */
 export const cacheGameData = (gameData, gameDetails) => {
   let {
     id,

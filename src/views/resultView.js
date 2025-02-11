@@ -1,14 +1,20 @@
-import { RESULT_CONTAINER_ID, GAME_ID_ATTR, RESULT_CARD_CLASS } from "../constants.js";
+import { 
+  RESULT_CONTAINER_ID, 
+  GAME_ID_ATTR, 
+  RESULT_CARD_CLASS 
+} from "../constants.js";
 
 /**
- * Create the result page
+ * Creates the result page container
+ * Sorts search results by user rating
+ * Dynamically creates result cards
+ * @param {Array} results
  * @returns {Element}
  */
 export const createResultView = (results) => {
   const resultContainer = document.createElement('div');
   resultContainer.id = RESULT_CONTAINER_ID;
   
-
   results.sort((a, b) => {
     if (a.rating < b.rating) {
       return 1;

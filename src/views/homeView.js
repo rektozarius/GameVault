@@ -6,8 +6,8 @@ import {
 } from "../constants.js";
 
 /**
- * Create the home page
- * @returns {Element}
+ * Creates the home page container
+ * @returns {Element} 
  */
 export const createHomeView = () => {
   const homeContainer = document.createElement('div');
