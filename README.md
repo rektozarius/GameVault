@@ -10,21 +10,42 @@ GameVault mimics the color/brand [palette](https://discord.com/branding) of Disc
 
 To run this project locally you will need to open `index.html` in your browser using a local server. LiveServer, `http-server`, `study-lenses`, or any other local static server will work.
 
-## Features
+## Project Tree
 
-### High Priority
+```bash
+│   index.html
+│
+├───public
+│       home.png
+│       icon.png
+│       style.css
+│
+└───src
+    │   app.js
+    │   constants.js
+    │
+    ├───helpers
+    │       cacheGameData.js
+    │       errorView.js
+    │       fetchData.js
+    │       genreTagHandlers.js
+    │       loadingView.js
+    │
+    ├───pages
+    │       gamePage.js
+    │       homePage.js
+    │       resultPage.js
+    │
+    └───views
+            gameView.js
+            homeView.js
+            resultView.js
+```
 
-- [ ] The app is a responsive single page application
-- [ ] The app grabs game data via RAWG API based on user input
-- [ ] The app displays human readable errors to the user on page
-- [ ] The user can input their favorite game and display a game info page (example info: description, rating, screenshots, trailers, genres, tags)
+## Screenshots
 
-### Medium Priority
+![Screenshot](./assets/homePage.png?raw=true "Home Page")
 
-- [ ] The user can view a list of the current most popular games for all genres
-- [ ] The user can search games by genre
+![Screenshot](./assets/resultPage.png?raw=true "Result Page")
 
-### Low Priority
-
-- [ ] The user can bookmark a game to later view on the favorites page
-- [ ] The user can see suggestions for similar games on the game info page
+![Screenshot](./assets/gamePage.png?raw=true "Game Page")
