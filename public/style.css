@@ -27,7 +27,7 @@ body {
 }
 
 #search-bar-container {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 #search-bar {
@@ -36,12 +36,13 @@ body {
   padding: 10px 20px;
   border: none;
   border-radius: 25px;
-  background-color: #4f545c;
+  background-color: #9ba6b8;
   color: #ffffff;
   font-size: 16px;
   outline: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   transition: transform 0.5s ease, box-shadow 0.5s ease;
+  text-align: center;
 }
 
 #search-bar:focus {
@@ -55,6 +56,7 @@ body {
 }
 
 #search-bar::placeholder {
+  text-align: center;
   color: #ffffff;
 }
 
@@ -67,7 +69,7 @@ body {
 
 #home-genres-container h1 {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   font-size: 24px;
   color: #ffffff;
 }
@@ -75,7 +77,7 @@ body {
 #home-genres-container span {
   padding: 10px 20px;
   background-color: #4f545c;
-  border-radius: 25px;
+  border-radius: 10px;
   font-size: 14px;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);

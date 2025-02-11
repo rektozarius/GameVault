@@ -15,7 +15,8 @@ export const createHomeView = () => {
 
   homeContainer.innerHTML = String.raw`
     <div id="${SEARCH_BAR_CONTAINER_ID}">
-      <input id="${SEARCH_BAR_ID}" type="search" placeholder="Search">
+      <h1>GameVault</h1>
+      <input id="${SEARCH_BAR_ID}" type="search" placeholder="search games...">
     </div>
     <div id="${HOME_GENRES_CONTAINER_ID}">
       <h1>Search Games by Genre</h1>

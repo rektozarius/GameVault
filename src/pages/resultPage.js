@@ -20,20 +20,16 @@ export const initResultPage = (results) => {
 const resultListener = (results) => {
   const resultContainer = document.getElementById(RESULT_CONTAINER_ID);
   
-  resultContainer.addEventListener('click', async (event) => {
+  resultContainer.addEventListener('click', (event) => {
     const gameId = event.target.closest(`.${RESULT_CARD_CLASS}`).dataset.gameId;
-    try {
-      const cachedGame = sessionStorage.getItem(gameId);
-      if (cachedGame) {   
-        initGamePage(JSON.parse(cachedGame));
-      } else {
-        loadingView();
-        const gameSearchData = results.find((game) => (game.id == gameId));
-        cacheAndLoad(gameSearchData);
-      } 
-    } catch (error) {
-      errorView(error.message);
-    }
+    const cachedGame = sessionStorage.getItem(gameId);
+    if (cachedGame) {   
+      initGamePage(JSON.parse(cachedGame));
+    } else {
+      loadingView();
+      const gameSearchData = results.find((game) => (game.id == gameId));
+      cacheAndLoad(gameSearchData);
+    } 
   });
 };
 
