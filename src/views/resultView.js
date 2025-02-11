@@ -7,6 +7,16 @@ import { RESULT_CONTAINER_ID, GAME_ID_ATTR, RESULT_CARD_CLASS } from "../constan
 export const createResultView = (results) => {
   const resultContainer = document.createElement('div');
   resultContainer.id = RESULT_CONTAINER_ID;
+  
+
+  results.sort((a, b) => {
+    if (a.rating < b.rating) {
+      return 1;
+    } else if (a.rating > b.rating) {
+      return -1;
+    }
+    return 0;
+  })
 
   results.forEach((result) => {
     const resultCard = document.createElement('div');

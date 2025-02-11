@@ -5,7 +5,7 @@ import {
 } from '../constants.js';
 
 export const fetchData = async (input, filter) => {
-  const filterUrl = `${API_BASE_URL}/games?${filter}=${input}&exclude_additions=true&${API_KEY}`;
+  const filterUrl = `${API_BASE_URL}/games?${filter}=${input}&page_size=40&exclude_additions=true&${API_KEY}`;
   const gameUrl = `${API_BASE_URL}/games/${input}?${API_KEY}`;
   const genresUrl = `${API_BASE_URL}/genres?${API_KEY}`;
 
