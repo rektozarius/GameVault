@@ -1,7 +1,7 @@
 export const USER_INTERFACE_ID = 'user-interface';
 // key removed
-export const API_KEY = 'key='; 
-export const API_BASE_URL = 'https://api.rawg.io/api';
+export const API_KEY = ''; 
+export const API_BASE_URL = '/api';
 export const API_FILTERS = {
     search: 'search',
     game: 'game',
